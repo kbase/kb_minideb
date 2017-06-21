@@ -7,7 +7,7 @@ ARG BUILD_DATE
 ARG VCS_REF
 ARG BRANCH=master
 
-RUN install_packages ca-certificates python python-jinja2 python-yaml python-pip && \
+RUN install_packages ca-certificates python python-jinja2 python-yaml python-pip httpie && \
     update-ca-certificates && \
     pip install shinto-cli[yaml]
 
