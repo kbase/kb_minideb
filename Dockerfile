@@ -9,7 +9,7 @@ ARG BRANCH=master
 
 RUN install_packages ca-certificates python python-jinja2 python-yaml python-pip && \
     update-ca-certificates && \
-    pip install j2cli[yaml]
+    pip install shinto-cli[yaml]
 
 LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-url="https://github.com/kbase/kb_minideb.git" \
