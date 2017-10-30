@@ -7,9 +7,11 @@ ARG BUILD_DATE
 ARG VCS_REF
 ARG BRANCH=master
 
-RUN install_packages ca-certificates python python-jinja2 python-yaml python-setuptools wget && \
+RUN install_packages ca-certificates && \
     update-ca-certificates && \
-    easy_install shinto-cli[yaml]
+    mkdir -p /kb/deployment/bin
+
+COPY dockerize /kb/deployment/bin
 
 LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-url="https://github.com/kbase/kb_minideb.git" \
